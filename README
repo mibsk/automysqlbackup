@@ -1,4 +1,8 @@
-AutomysqlBackup
+# AutomysqlBackup
+
+- Imported from [sourceforge](http://sourceforge.net/projects/automysqlbackup/).
+- Original licensing and credit is applied to [authors](http://sourceforge.net/p/automysqlbackup/wiki/Home/).
+
 -------------------------
 .. INDEX
 -------------------------
@@ -61,7 +65,7 @@ find /var/backup/db* -type d -exec chmod 700 {} \;
 
 #~~~~~ Copy To Above Here ~~~~
 
-2. Save it to a suitable location or copy it to your /etc/cron.daily folder. 
+2. Save it to a suitable location or copy it to your /etc/cron.daily folder.
 
 3. Make it executable, i.e. chmod +x /etc/cron.daily/runmysqlbackup.
 
@@ -205,4 +209,3 @@ or
   mysql --user=username --pass=password --host=dbserver -e "source /path/file.sql" database
 
 NOTE: Make sure you use "<" and not ">" in the above command because you are piping the file.sql to mysql and not the other way around.
-
