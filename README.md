@@ -18,13 +18,13 @@ Restoring
 
 DISCLAIMER
 -------------------------
-I take no resposibility for any data loss or corruption when using this script.
+  I take no resposibility for any data loss or corruption when using this script.
 This script will not help in the event of a hard drive crash. If a copy of the
 backup has not been stored offline or on another PC. You should copy your backups
 offline regularly for best protection.
 
 Happy backing up...
-
+ 
 
 
 INSTALL
@@ -55,13 +55,12 @@ Automysqlbackup can be run a number of ways, you can choose which is best for yo
 1. Create a script as below called runmysqlbackup using the lines below:
 
 #~~~~ Copy From Below Here ~~~~
-#!/bin/sh
+    #!/bin/sh
 
-/usr/local/bin/automysqlbackup /etc/automysqlbackup/myserver.conf
-
-chown root.root /var/backup/db* -R
-find /var/backup/db* -type f -exec chmod 400 {} \;
-find /var/backup/db* -type d -exec chmod 700 {} \;
+    /usr/local/bin/automysqlbackup /etc/automysqlbackup/myserver.conf
+    chown root.root /var/backup/db* -R
+    find /var/backup/db* -type f -exec chmod 400 {} \;
+    find /var/backup/db* -type d -exec chmod 700 {} \;
 
 #~~~~~ Copy To Above Here ~~~~
 
