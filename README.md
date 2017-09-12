@@ -61,7 +61,7 @@ Automysqlbackup can be run a number of ways, you can choose which is best for yo
     chown root.root /var/backup/db* -R
     find /var/backup/db* -type f -exec chmod 400 {} \;
     find /var/backup/db* -type d -exec chmod 700 {} \;
-        
+
 #~~~~~ Copy To Above Here ~~~~
 
 2. Save it to a suitable location or copy it to your /etc/cron.daily folder.
@@ -137,6 +137,7 @@ The global config file which overwrites the default configuration is located her
 Please take a look at the supplied "automysqlbackup.conf" for information about the configuration options.
 
 Default configuration
+
     CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
     CONFIG_backup_dir='/var/backup/db'
     CONFIG_do_monthly="01"
