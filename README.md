@@ -4,7 +4,7 @@
 - Original licensing and credit is applied to [authors](http://sourceforge.net/p/automysqlbackup/wiki/Home/).
 
 -------------------------
-.. INDEX
+INDEX
 -------------------------
 Disclaimer
 Install
@@ -16,7 +16,7 @@ Restoring
 
 
 
-.. DISCLAIMER
+DISCLAIMER
 -------------------------
 I take no resposibility for any data loss or corruption when using this script.
 This script will not help in the event of a hard drive crash. If a copy of the
@@ -27,7 +27,7 @@ Happy backing up...
 
 
 
-.. INSTALL
+INSTALL
 -------------------------
 Extract the package into a directory. If you are reading this you have probably done
 this already.
@@ -47,7 +47,7 @@ To install it manually (the hard way).
 
 
 
-.. USAGE
+USAGE
 -------------------------
 
 Automysqlbackup can be run a number of ways, you can choose which is best for you.
@@ -127,7 +127,7 @@ choose what you want to be done with/to those files. At the moment the options a
 - remove the differential backup and its Manifest entry.
 
 
-.. CONFIGURATION OPTIONS
+CONFIGURATION OPTIONS
 -------------------------
 
 !! "automysqlbackup" program contains a default configuration that should not be changed:
@@ -171,7 +171,7 @@ Please take a look at the supplied "automysqlbackup.conf" for information about 
 
 
 
-.. ENCRYPTION
+ENCRYPTION
 -------------------------
 
 To decrypt run (replace bz2 with gz if using gzip):
@@ -180,7 +180,7 @@ openssl enc -aes-256-cbc -d -in encrypted_file_name(ex: *.enc.bz2) -out outputfi
 
 
 
-.. BACKUP ROTATION
+BACKUP ROTATION
 -------------------------
 
 Daily Backups are rotated weekly.
@@ -193,7 +193,7 @@ Suggestion: It may be a good idea to copy monthly backups offline or to another 
 
 
 
-.. RESTORING
+RESTORING
 -------------------------
 
 Firstly you will need to uncompress the backup file and decrypt it if encryption was used (see encryption section).
