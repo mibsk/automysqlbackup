@@ -55,13 +55,13 @@ Automysqlbackup can be run a number of ways, you can choose which is best for yo
 1. Create a script as below called runmysqlbackup using the lines below:
 
 #~~~~ Copy From Below Here ~~~~
-#!/bin/sh
+    #!/bin/sh
 
-/usr/local/bin/automysqlbackup /etc/automysqlbackup/myserver.conf
+    /usr/local/bin/automysqlbackup /etc/automysqlbackup/myserver.conf
 
-chown root.root /var/backup/db* -R
-find /var/backup/db* -type f -exec chmod 400 {} \;
-find /var/backup/db* -type d -exec chmod 700 {} \;
+    chown root.root /var/backup/db* -R
+    find /var/backup/db* -type f -exec chmod 400 {} \;
+        find /var/backup/db* -type d -exec chmod 700 {} \;
 
 #~~~~~ Copy To Above Here ~~~~
 
@@ -72,12 +72,12 @@ find /var/backup/db* -type d -exec chmod 700 {} \;
 
 The backup can be run from the command line simply by running the following command.
 
-  automysqlbackup /etc/automysqlbackup/myserver.conf
+    automysqlbackup /etc/automysqlbackup/myserver.conf
 
 If you don't supply an argument for automysqlbackup, the default configuration
 in the program automysqlbackup will be used unless a global file
 
-  CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
+    CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
 
 exists.
 
@@ -138,32 +138,32 @@ The global config file which overwrites the default configuration is located her
 Please take a look at the supplied "automysqlbackup.conf" for information about the configuration options.
 
 Default configuration
-CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
-CONFIG_backup_dir='/var/backup/db'
-CONFIG_do_monthly="01"
-CONFIG_do_weekly="5"
-CONFIG_rotation_daily=6
-CONFIG_rotation_weekly=35
-CONFIG_rotation_monthly=150
-CONFIG_mysql_dump_usessl='yes'
-CONFIG_mysql_dump_username='root'
-CONFIG_mysql_dump_password=''
-CONFIG_mysql_dump_host='localhost'
-CONFIG_mysql_dump_socket=''
-CONFIG_mysql_dump_create_database='no'
-CONFIG_mysql_dump_use_separate_dirs='yes'
-CONFIG_mysql_dump_compression='gzip'
-CONFIG_mysql_dump_commcomp='no'
-CONFIG_mysql_dump_latest='no'
-CONFIG_mysql_dump_max_allowed_packet=''
-CONFIG_db_names=()
-CONFIG_db_month_names=()
-CONFIG_db_exclude=( 'information_schema' )
-CONFIG_mailcontent='log'
-CONFIG_mail_maxattsize=4000
-CONFIG_mail_address='root'
-CONFIG_encrypt='no'
-CONFIG_encrypt_password='password0123'
+    CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
+    CONFIG_backup_dir='/var/backup/db'
+    CONFIG_do_monthly="01"
+    CONFIG_do_weekly="5"
+    CONFIG_rotation_daily=6
+    CONFIG_rotation_weekly=35
+    CONFIG_rotation_monthly=150
+    CONFIG_mysql_dump_usessl='yes'
+    CONFIG_mysql_dump_username='root'
+    CONFIG_mysql_dump_password=''
+    CONFIG_mysql_dump_host='localhost'
+    CONFIG_mysql_dump_socket=''
+    CONFIG_mysql_dump_create_database='no'
+    CONFIG_mysql_dump_use_separate_dirs='yes'
+    CONFIG_mysql_dump_compression='gzip'
+    CONFIG_mysql_dump_commcomp='no'
+    CONFIG_mysql_dump_latest='no'
+    CONFIG_mysql_dump_max_allowed_packet=''
+    CONFIG_db_names=()
+    CONFIG_db_month_names=()
+    CONFIG_db_exclude=( 'information_schema' )
+    CONFIG_mailcontent='log'
+    CONFIG_mail_maxattsize=4000
+    CONFIG_mail_address='root'
+    CONFIG_encrypt='no'
+    CONFIG_encrypt_password='password0123'
 
 !! automysqlbackup (the shell program) accepts one parameter, the filename of a configuration file. The entries in there will supersede all others.
 
@@ -176,7 +176,7 @@ ENCRYPTION
 
 To decrypt run (replace bz2 with gz if using gzip):
 
-openssl enc -aes-256-cbc -d -in encrypted_file_name(ex: *.enc.bz2) -out outputfilename.bz2 -pass pass:PASSWORD-USED-TO-ENCRYPT
+    openssl enc -aes-256-cbc -d -in encrypted_file_name(ex: *.enc.bz2) -out outputfilename.bz2 -pass pass:PASSWORD-USED-TO-ENCRYPT
 
 
 
@@ -204,8 +204,8 @@ gunzip file.gz (or bunzip2 file.bz2)
 Next you will need to use the mysql client to restore the DB from the sql file.
 
 eg.
-  mysql --user=username --pass=password --host=dbserver database < /path/file.sql
+    mysql --user=username --pass=password --host=dbserver database < /path/file.sql
 or
-  mysql --user=username --pass=password --host=dbserver -e "source /path/file.sql" database
+    mysql --user=username --pass=password --host=dbserver -e "source /path/file.sql" database
 
 NOTE: Make sure you use "<" and not ">" in the above command because you are piping the file.sql to mysql and not the other way around.
