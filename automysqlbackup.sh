@@ -58,7 +58,7 @@ MAXATTSIZE="4000"
 # Email Address to send mail to? (user@domain.com)
 MAILADDR="maintenance@example.com"
 # ============================================================
-# === ADVANCED OPTIONS ( Read the doc's below for details )===
+# === ADVANCED OPTIONS ( Read the doc's for details )===
 #=============================================================
 # List of DBBNAMES for Monthly Backups.
 MDBNAMES="${DBNAMES}"
