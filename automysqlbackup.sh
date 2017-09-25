@@ -18,11 +18,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-#=====================================================================
-#=====================================================================
-# Set the following variables to your system needs
-# (Detailed instructions below variables)
-#=====================================================================
+# =====================================================================
+# === Set the following variables to your system needs # (Detailed instructions below variables) ===
+# =====================================================================
 #set -x
 CONFIGFILE="/etc/automysqlbackup/automysqlbackup.conf"
 
@@ -59,7 +57,7 @@ MAXATTSIZE="4000"
 MAILADDR="maintenance@example.com"
 # ============================================================
 # === ADVANCED OPTIONS ( Read the doc's for details )===
-#=============================================================
+# =============================================================
 # List of DBBNAMES for Monthly Backups.
 MDBNAMES="${DBNAMES}"
 # List of DBNAMES to EXLUCDE if DBNAMES are set to all (must be in " quotes)
@@ -86,16 +84,13 @@ SOCKET=
 #POSTBACKUP="/etc/mysql-backup-post"
 ### END CFG ###
 fi
-#=====================================================================
-#=====================================================================
-#=====================================================================
+# =====================================================================
+# =====================================================================
 #
-# Should not need to be modified from here down!!
+# === Should not need to be modified from here down!! ===
 #
-#=====================================================================
-#=====================================================================
-#=====================================================================
-#
+# =====================================================================
+# =====================================================================
 # Full pathname to binaries to avoid problems with aliases and builtins etc.
 #
 WHICH="`which which`"
