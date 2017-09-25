@@ -4,10 +4,9 @@ Set *USERNAME* and *PASSWORD* of a user that has the appropriate permissions to 
 
 === NEW in 2.5.1:
 
-If *USERNAME* is set to "debian" and *PASSWORD* is unset or "" obtain them from the file /etc/mysql/debian.cnf
-First command line option "-c" for configfile
-
-.Interpretable Exit-States:
+* If *USERNAME* is set to "debian" and *PASSWORD* is unset or "" obtain them from the file /etc/mysql/debian.cnf
+* First command line option "-c" for configfile
+* Interpretable Exit-States:
 . given configfile is not readable or does not exist
 . unknown option
 
@@ -59,12 +58,12 @@ Use *PREBACKUP* and *POSTBACKUP* to specify Per and Post backup commands or scri
 
 === Backup Rotation
 
-Daily Backups are rotated weekly..
-Weekly Backups are run by default on Saturday Morning when cron.daily scripts are run...Can be changed with *DOWEEKLY* setting..
-Weekly Backups are rotated on a 5 week cycle..
-Monthly Backups are run on the 1st of the month..
-Monthly Backups are rotated on a 5 month cycle...
-It may be a good idea to copy Monthly backups offline or to another server..
+Daily Backups are rotated weekly.. +
+Weekly Backups are run by default on Saturday Morning when cron.daily scripts are run...Can be changed with *DOWEEKLY* setting.. +
+Weekly Backups are rotated on a 5 week cycle.. +
+Monthly Backups are run on the 1st of the month.. +
+Monthly Backups are rotated on a 5 month cycle... +
+It may be a good idea to copy Monthly backups offline or to another server.. +
 
 === Please Note
 
@@ -76,18 +75,11 @@ Happy backing up...
 
 === Restoring
 
-Firstly you will need to uncompress the backup file.
-eg.
-
-+gunzip file.gz (or bunzip2 file.bz2)+
-
-Next you will need to use the mysql client to restore the DB from the sql file.
-eg.
-
-+mysql --user=username --pass=password --host=dbserver database < /path/file.sql+
-
-or
-
+Firstly you will need to uncompress the backup file. eg. +
++gunzip file.gz (or bunzip2 file.bz2)+ +
+Next you will need to use the mysql client to restore the DB from the sql file. eg. +
++mysql --user=username --pass=password --host=dbserver database < /path/file.sql+ +
+or +
 +mysql --user=username --pass=password --host=dbserver -e "source /path/file.sql" database+
 
 NOTE: Make sure you use "<" and not ">" in the above command because you are piping the file.sql to mysql and not the other way around.
